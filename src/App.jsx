@@ -3,12 +3,14 @@ import { Link, Route, Routes, useLocation } from 'react-router-dom';
 import SiteLayout from './components/SiteLayout.jsx';
 import AboutPage from './pages/AboutPage.jsx';
 import HomePage from './pages/HomePage.jsx';
+import ManageProductsPage from './pages/ManageProductsPage.jsx';
 import ProductsPage from './pages/ProductsPage.jsx';
 
 const pages = [
   { path: '/', label: 'Trang chủ', Component: HomePage },
   { path: '/products', label: 'Sản phẩm', Component: ProductsPage },
   { path: '/about-us', label: 'Giới thiệu', Component: AboutPage },
+  { path: '/admin/products', label: 'Quản lý', Component: ManageProductsPage },
 ];
 
 function NotFoundPage() {
