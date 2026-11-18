@@ -1,0 +1,46 @@
+@host = http://localhost:5080
+
+### GET - lấy tất cả sản phẩm
+GET {{host}}/api/products
+
+### GET - lọc theo danh mục
+GET {{host}}/api/products?category=Mac
+
+### GET - lấy một sản phẩm theo id
+GET {{host}}/api/products/1
+
+### POST - thêm sản phẩm mới
+POST {{host}}/api/products
+Content-Type: application/json
+
+{
+  "slug": "airpods-pro-3",
+  "category": "Âm thanh",
+  "name": "AirPods Pro 3",
+  "image": "/images/airpods-pro-3.webp",
+  "description": "Tai nghe chống ồn chủ động.",
+  "price": 6990000,
+  "specs": [
+    { "label": "Chip", "value": "Apple H2" }
+  ]
+}
+
+### PUT - cập nhật sản phẩm có id = 5 (đổi id cho khớp sau khi POST)
+PUT {{host}}/api/products/5
+Content-Type: application/json
+
+{
+  "slug": "airpods-pro-3",
+  "category": "Âm thanh",
+  "name": "AirPods Pro 3 (cập nhật)",
+  "image": "/images/airpods-pro-3.webp",
+  "description": "Tai nghe chống ồn chủ động.",
+  "price": 6490000,
+  "specs": [
+    { "label": "Chip", "value": "Apple H2" },
+    { "label": "Pin", "value": "Đến 6 giờ" }
+  ]
+}
+
+### DELETE - xóa sản phẩm có id = 5
+DELETE {{host}}/api/products/5
